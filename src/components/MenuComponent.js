@@ -20,7 +20,11 @@ class Menu extends Component {
         if(dish != null){
             return(
                 <Card>
-                    
+                    <CardImg width="100%" src={dish.image} alt={dish.name} />
+                    <CardBody>
+                        <CardTitle>{dish.name}</CardTitle>
+                        <CardText>{dish.description}</CardText>
+                    </CardBody>
                 </Card>
             );
         }
@@ -39,7 +43,6 @@ class Menu extends Component {
                     <CardImg width="100%" src={dish.image} alt={dish.name} />
                     <CardImgOverlay>
                       <CardTitle>{dish.name}</CardTitle>
-                     
                     </CardImgOverlay>
                 </Card>
                 </div>
@@ -49,7 +52,9 @@ class Menu extends Component {
             <div className="container">
                 <div className="row">
                         { menu }
-
+                </div>
+                <div className="row">
+                    {this.renderDish(this.state.selectedDish)}
                 </div>
             </div>
         );
